@@ -1,0 +1,384 @@
+<div class="content">
+
+    <div style="margin-bottom: 7%;" *ngFor="let item of forms;let i = index;">
+        <div class="container">
+            <div class="row align-items-stretch no-gutters contact-wrap">
+                <div class="col-md-12">
+                    <div class="form h-100">
+                        <div
+                            style="border-style: solid; border-radius: 25px; margin-bottom: 4%; padding: 20px; border-color: #EF4239;">
+                            <h3>Field {{i + 1}} Added To Queue</h3>
+                            <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                                <div class="row">
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="" class="col-form-label">Form id</label>
+                                        <input type="text" class="form-control" [(ngModel)]="item.formField.formId"
+                                            name="formId" id="formId" placeholder="Form ID">
+                                    </div>
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="" class="col-form-label">Field Type Name</label>
+                                        <input type="text" class="form-control"
+                                            [(ngModel)]="item.formField.fieldTypeName" name="email" id="email"
+                                            placeholder="Field Type Name">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="" class="col-form-label">Title Ar</label>
+                                        <input type="text" class="form-control" [(ngModel)]="item.formField.title.ar"
+                                            name="I18n.ar" id="I18n.ar" placeholder="Title Ar">
+                                    </div>
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="" class="col-form-label">Title En</label>
+                                        <input type="text" class="form-control" [(ngModel)]="item.formField.title.en"
+                                            name="I18n.en" id="I18n.en" placeholder="Title En">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="" class="col-form-label">Field Name</label>
+                                        <input type="text" class="form-control" [(ngModel)]="item.formField.fieldName"
+                                            name="fieldName" id="fieldName" placeholder="Field Name">
+                                    </div>
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="" class="col-form-label">API</label>
+                                        <input type="text" class="form-control" [(ngModel)]="item.formField.api"
+                                            name="api" id="api" placeholder="api">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="" class="col-form-label">Order</label>
+                                        <input type="number" class="form-control" [(ngModel)]="item.formField.order"
+                                            name="order" id="order" placeholder="Order">
+                                    </div>
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="" class="col-form-label">Step Name</label>
+                                        <input type="text" class="form-control" [(ngModel)]="item.formField.stepName"
+                                            name="stepName" id="stepName" placeholder="Step Name">
+                                    </div>
+                                </div>
+
+                                <hr>
+                                <div class="space"></div>
+
+                                <h3>Validations</h3>
+                                <div class="row">
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="" class="col-form-label">Max Length</label>
+                                        <input type="number" class="form-control" [(ngModel)]="item.maxLength"
+                                            name="maxLength" id="maxLength" placeholder="Max Length">
+                                    </div>
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="" class="col-form-label">Min Length</label>
+                                        <input type="number" class="form-control" [(ngModel)]="item.minLength"
+                                            name="minLength" id="minLength" placeholder="Min Length">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="" class="col-form-label">Is Required ?</label>
+                                        <input style="margin-left: 5%;" type="checkbox" [(ngModel)]="item.isRequired"
+                                            name="isRequired" id="isRequired">
+                                    </div>
+                                </div>
+                                <hr>
+                                <h3>Extra Validations</h3>
+                                <div style="border-style: solid; border-radius: 25px; margin-bottom: 4%; padding: 20px; border-color: #EF4239;"
+                                    *ngFor="let item2 of item.extraValidation; let i = index">
+                                    <div class="row">
+                                        <div class="col-md-6 form-group mb-3">
+                                            <label for="" class="col-form-label">Key: </label>
+                                            {{item2.key}}
+                                        </div>
+                                        <div class="col-md-6 form-group mb-3">
+                                            <label for="" class="col-form-label">Value: </label>
+                                            {{item2.value}}
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="space"></div>
+                                <hr>
+                                <h3>List Of Values</h3>
+                                <div style="border-style: solid; border-radius: 25px; margin-bottom: 4%; padding: 20px; border-color: #EF4239;"
+                                    *ngFor="let item of item.formField.source; let i = index">
+                                    <h5>{{i + 1}}</h5>
+                                    <div class="row">
+                                        <div class="col-md-6 form-group mb-3">
+                                            <label for="" class="col-form-label">Title Ar: </label>
+                                            {{item.title.ar}}
+                                        </div>
+                                        <div class="col-md-6 form-group mb-3">
+                                            <label for="" class="col-form-label">Title En: </label>
+                                            {{item.title.en}}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 form-group mb-3">
+                                            <label for="" class="col-form-label">Value: </label>
+                                            {{item.value}}
+                                        </div>
+                                        <div class="col-md-6 form-group mb-3">
+                                            <label for="" class="col-form-label">Order: </label>
+                                            {{item.order}}
+                                        </div>
+                                    </div>
+
+
+                                    <!-- Already Added -->
+
+
+
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="row align-items-stretch no-gutters contact-wrap">
+            <div class="col-md-12">
+                <div class="form h-100">
+                    <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                        <div
+                            style="border-style: solid; border-radius: 25px; margin-bottom: 4%; padding: 20px; border-color: #EF4239;">
+                            <h3>Form Fields</h3>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Form id</label>
+                                    <input type="text" class="form-control" [(ngModel)]="allForm.formField.formId"
+                                        name="formId" id="formId" placeholder="Form ID">
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Field Type Name</label>
+                                    <!-- <input type="text" class="form-control" [(ngModel)]="allForm.formField.fieldTypeName" name="email"
+                      id="email" placeholder="Field Type Name"> -->
+                                    <div>
+                                        <select class="form-control" *ngIf="isOther == false" name="email"
+                                            [(ngModel)]="allForm.formField.fieldTypeName" (change)="onOptionSelected()">
+                                            <option value="" disabled selected>Select your Type</option>
+                                            <option value="text">Text</option>
+                                            <option value="label">Label</option>
+                                            <option value="search">Search</option>
+                                            <option value="mobile">Mobile</option>
+                                            <option value="note">Note</option>
+                                            <option value="radio">Radio</option>
+                                            <option value="select">Select</option>
+                                            <option value="date">Date</option>
+                                            <option value="datetime">Datetime</option>
+                                            <option value="date_range">Date Range</option>
+                                            <option value="other">Other</option>
+                                            <!-- <option *ngFor="let option of test" [value]="option">{{ option }}</option> -->
+                                        </select>
+                                        <input class="form-control" [(ngModel)]="allForm.formField.fieldTypeName"
+                                            *ngIf="isOther" name="email" type="text" (input)="onCustomInputChange()"
+                                            placeholder="Type The Form Field Type">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Title Ar</label>
+                                    <input type="text" class="form-control" [(ngModel)]="allForm.formField.title.ar"
+                                        name="I18n.ar" id="I18n.ar" placeholder="Title Ar">
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Title En</label>
+                                    <input type="text" class="form-control" [(ngModel)]="allForm.formField.title.en"
+                                        name="I18n.en" id="I18n.en" placeholder="Title En">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Field Name</label>
+                                    <input type="text" class="form-control" [(ngModel)]="allForm.formField.fieldName"
+                                        name="fieldName" id="fieldName" placeholder="Field Name">
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">API</label>
+                                    <input type="text" class="form-control" [(ngModel)]="allForm.formField.api"
+                                        name="api" id="api" placeholder="api">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Order</label>
+                                    <input type="number" class="form-control" [(ngModel)]="allForm.formField.order"
+                                        name="order" id="order" placeholder="Order">
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Step Name</label>
+                                    <input type="text" class="form-control" [(ngModel)]="allForm.formField.stepName"
+                                        name="stepName" id="stepName" placeholder="Step Name">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space"></div>
+
+                        <div
+                            style="border-style: solid; border-radius: 25px; margin-bottom: 4%; padding: 20px; border-color: #EF4239;">
+                            <h3>Validations</h3>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Max Length</label>
+                                    <input type="number" class="form-control" [(ngModel)]="allForm.maxLength"
+                                        name="maxLength" id="maxLength" placeholder="Max Length">
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Min Length</label>
+                                    <input type="number" class="form-control" [(ngModel)]="allForm.minLength"
+                                        name="minLength" id="minLength" placeholder="Min Length">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Is Required ?</label>
+                                    <input style="margin-left: 5%;" type="checkbox" [(ngModel)]="allForm.isRequired"
+                                        name="isRequired" id="isRequired">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            style="border-style: solid; border-radius: 25px; margin-bottom: 4%; padding: 20px; border-color: #EF4239;">
+                            <h3>Extra Validations</h3>
+                            <h5 style="font-weight: bold;">The Key list is fetched from the service </h5>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Key</label>
+                                    <select *ngIf="isOther == false" class="form-control" name="email"
+                                        [(ngModel)]="extraValidation.key" (change)="onOptionSelectedForVali()">
+                                        <option value="" disabled selected>Select Type from above</option>
+                                        <option *ngFor="let option of fieldTypeProperty" [value]="option.propertyName">
+                                            {{
+                                            option.propertyName }}</option>
+                                    </select>
+                                    <input class="form-control" [(ngModel)]="extraValidation.key" *ngIf="isOther"
+                                        name="email" type="text" (input)="onCustomInputChange()"
+                                        placeholder="Type The Form Field Type">
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Value</label>
+                                    <input type="text" class="form-control" [(ngModel)]="extraValidation.value"
+                                        name="valvalue" id="valvalue" placeholder="Value">
+                                </div>
+                            </div>
+                            <input type="submit" (click)="AddExtraValidation(extraValidation)"
+                                value="Add Extra Validation" class="btn btn-primary rounded-0 py-2 px-4">
+                            <div style="border-style: solid; border-radius: 25px; margin-bottom: 4%; padding: 20px; border-color: #EF4239; margin-top: 5%;"
+                                *ngFor="let item of extraValidationList; let i = index">
+                                <div class="row">
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="" class="col-form-label">Key: </label>
+                                        {{item.key}}
+                                    </div>
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="" class="col-form-label">Value: </label>
+                                        {{item.value}}
+                                    </div>
+                                </div>
+                                <input type="submit" (click)="removeExtraValiItem(item)" value="Remove"
+                                    class="btn btn-primary rounded-0 py-2 px-4">
+                            </div>
+                        </div>
+                        <div class="space"></div>
+                        <!-- Already Added -->
+
+                        <div style="border-style: solid; border-radius: 25px; margin-bottom: 4%; padding: 20px; border-color: #EF4239;"
+                            *ngFor="let item of sourceList; let i = index">
+                            <h5>{{i + 1}}</h5>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Title Ar: </label>
+                                    {{item.title.ar}}
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Title En: </label>
+                                    {{item.title.en}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Value: </label>
+                                    {{item.value}}
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Order: </label>
+                                    {{item.order}}
+                                </div>
+                            </div>
+
+
+                            <input type="submit" (click)="removeLOVItem(source)" value="Remove"
+                                class="btn btn-primary rounded-0 py-2 px-4">
+
+
+                        </div>
+
+                        <!-- Already Added -->
+
+                        <div
+                            style="border-style: solid; border-radius: 25px; margin-bottom: 4%; padding: 20px; border-color: #EF4239;">
+                            <h3>List Of Values</h3>
+                            <h6>Leave empty if non</h6>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Title Ar</label>
+                                    <input type="text" class="form-control" [(ngModel)]="source.title.ar"
+                                        name="I18nSource.ar" placeholder="Title Ar">
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Title En</label>
+                                    <input type="text" class="form-control" [(ngModel)]="source.title.en"
+                                        name="I18nSource.en" id="I18nSource.en" placeholder="Title En">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Value</label>
+                                    <input type="text" class="form-control" [(ngModel)]="source.value" name="value"
+                                        id="value" placeholder="Value">
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Order</label>
+                                    <input type="number" class="form-control" [(ngModel)]="source.order"
+                                        name="lov.order" id="lov.order" placeholder="Order">
+                                </div>
+                            </div>
+
+                            <input type="submit" (click)="addListOfValues(source)" value="Add LOV"
+                                class="btn btn-primary rounded-0 py-2 px-4">
+                            <span class="submitting"></span>
+                        </div>
+
+                        <div class="col-md-12 form-group">
+                            <input style="margin-top: 5%;" type="submit" (click)="addItem(allForm)" value="Add Form"
+                                class="btn btn-primary rounded-0 py-2 px-4">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<input style="margin-bottom: 5%;" type="submit" (click)="PostForm()" value="Post Form !"
+    class="btn btn-primary rounded-0 py-2 px-4 container2 center1">
+<input style="margin-bottom: 5%;" type="submit" (click)="Back()" value="Back"
+    class="btn btn-primary rounded-0 py-2 px-4 back-button">
+
+<div *ngIf="isLoading" id="pause" class="d-flex align-items-center justify-content-center">
+    <div id="spinner"></div>
+</div>

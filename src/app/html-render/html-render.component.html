@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML Code Renderer</title>
+    <style>
+        #code-input {
+            width: 50%;
+            height: 300px;
+        }
+
+        #code-output {
+            width: 50%;
+            height: 300px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+
+<h1>HTML Code Renderer</h1>
+<form method="post" id="contactForm" name="contactForm">
+    <textarea id="code-input" name="test" [(ngModel)]="test" placeholder="Enter HTML code here"></textarea>
+    <button (click)="render()"> test </button>
+</form>
+<iframe class="center1 container2" style="width: 50%; height: 1000px;" *ngIf="gg" srcdoc="{{test}}"></iframe>
+
+
+</html>

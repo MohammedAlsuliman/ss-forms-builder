@@ -1,0 +1,106 @@
+<!-- Add new  -->
+<div style="margin-bottom: 5%; margin-top: 5%;">
+    <div class="container">
+        <div class="row align-items-stretch no-gutters contact-wrap">
+            <div class="col-md-12">
+                <div class="form h-100">
+                    <div
+                        style="border-style: solid; border-radius: 25px; margin-bottom: 4%; padding: 20px; border-color: #EF4239;">
+
+                        <h3>Add New Placeholders</h3>
+                        <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                            <div class="col-md-6 form-group mb-3">
+                                <label for="" class="col-form-label">Template ID</label>
+                                <input type="text" class="form-control" [(ngModel)]="templateId" name="templateId"
+                                    id="templateId" placeholder="Template ID">
+                            </div>
+                            <div
+                                style="border-style: solid; border-radius: 25px; margin-bottom: 4%; padding: 20px; border-color: #EF4239;">
+                                <div class="row">
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="" class="col-form-label">Name</label>
+                                        <input type="text" class="form-control" [(ngModel)]="templatePlaceholder.name"
+                                            name="name" id="name" placeholder="Field Type Name">
+                                    </div>
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="" class="col-form-label">Description</label>
+                                        <input type="text" class="form-control"
+                                            [(ngModel)]="templatePlaceholder.description" name="description"
+                                            id="description" placeholder="Description">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="" class="col-form-label">Is Required</label>
+                                        <input style="margin-left: 5%;" type="checkbox"
+                                            [(ngModel)]="templatePlaceholder.isRequired" name="isRequired"
+                                            id="isRequired" placeholder="Is Required">
+                                    </div>
+                                </div>
+
+                                <input type="submit" (click)="addNewPlaceholder(templatePlaceholder)"
+                                    value="Add new Placeholder to Q" style="margin-top: 4%;"
+                                    class="btn btn-primary rounded-0 py-2 px-4 container2 center1">
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Q -->
+
+<div style="margin-bottom: 5%; margin-top: 5%;">
+    <div class="container">
+        <div class="row align-items-stretch no-gutters contact-wrap">
+            <div class="col-md-12">
+                <div class="form h-100">
+                    <div
+                        style="border-style: solid; border-radius: 25px; margin-bottom: 4%; padding: 20px; border-color: #EF4239;">
+
+                        <h3>Queue</h3>
+                        <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                            <div *ngFor="let item of QTemplate;let i = index;"
+                                style="border-style: solid; border-radius: 25px; margin-bottom: 4%; padding: 20px; border-color: #EF4239;">
+                                Placeholder {{i + 1}}
+                                <div class="row">
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="" class="col-form-label">Name</label>
+                                        <input type="text" class="form-control" [(ngModel)]="item.name" name="name"
+                                            id="name" placeholder="Field Type Name">
+                                    </div>
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="" class="col-form-label">Description</label>
+                                        <input type="text" class="form-control" [(ngModel)]="item.description"
+                                            name="description" id="description" placeholder="Description">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="" class="col-form-label">Is Required</label>
+                                        <input style="margin-left: 5%;" type="checkbox" [(ngModel)]="item.isRequired"
+                                            name="isRequired" id="isRequired" placeholder="Is Required">
+                                    </div>
+                                </div>
+
+                                <input type="submit" (click)="removeItemFromQ(item)" value="Remove Item"
+                                    style="margin-top: 4%;"
+                                    class="btn btn-primary rounded-0 py-2 px-4 container2 center1">
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input style="margin-bottom: 5%;" type="submit" (click)="postMany()" value="Post Form !"
+    class="btn btn-primary rounded-0 py-2 px-4 container2 center1">
+
+    <input style="margin-bottom: 5%;" type="submit" (click)="Back()" value="Back"
+    class="btn btn-primary rounded-0 py-2 px-4 back-button">

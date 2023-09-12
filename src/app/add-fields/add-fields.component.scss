@@ -322,3 +322,15 @@ label.error {
 select {
     border: 1px solid red !important;
 }
+
+.back-button {
+    line-height: 12px;
+    // width: 18px;
+    font-size: 8pt;
+    font-family: tahoma;
+    margin-top: 1px;
+    margin-right: 2px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}

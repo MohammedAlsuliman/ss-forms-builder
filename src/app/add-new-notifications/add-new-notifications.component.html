@@ -1,0 +1,100 @@
+<div class="content">
+    <div *ngIf="isAdded" class="container">
+        <div class="row align-items-stretch no-gutters contact-wrap">
+            <div class="col-md-12">
+                <div class="form h-100">
+                    <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                        <div
+                            style="border-style: solid; border-radius: 25px; margin-bottom: 4%; padding: 20px; border-color: #EF4239;">
+                            <h3>Added Successfuly !</h3>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">ID: </label>
+                                    {{newForm.id}}
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Template Key</label>
+                                    {{newForm.templateKey}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Email Template</label>
+                                    {{newForm.emailTemplate}}
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">SMS Template</label>
+                                    {{newForm.smsTemplate}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Title</label>
+                                    {{newForm.title}}
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="space"></div>
+
+    <div class="container" *ngIf="isAdded == false">
+        <div class="row align-items-stretch no-gutters contact-wrap">
+            <div class="col-md-12">
+                <div class="form h-100">
+                    <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                        <div
+                            style="border-style: solid; border-radius: 25px; margin-bottom: 4%; padding: 20px; border-color: #EF4239;">
+                            <h3>Notification Template</h3>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Template Key</label>
+                                    <input type="text" class="form-control" [(ngModel)]="template.templateKey"
+                                        name="templateKey" id="templateKey" placeholder="Template Key">
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Title</label>
+                                    <input type="text" class="form-control" [(ngModel)]="template.title" name="title"
+                                        id="title" placeholder="Title">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Email Template</label>
+                                    <input type="text" class="form-control" [(ngModel)]="template.emailTemplate"
+                                        name="emailTemplate" id="emailTemplate" placeholder="Email Template">
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">SMS Template</label>
+                                    <input type="text" class="form-control" [(ngModel)]="template.smsTemplate"
+                                        name="smsTemplate" id="smsTemplate" placeholder="SMS Template">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 form-group">
+
+                            <input style="margin-top: 5%;" type="submit" (click)="addItem(template)"
+                                value="Post Template" class="btn btn-primary rounded-0 py-2 px-4">
+
+                        </div>
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isLoading" id="pause" class="d-flex align-items-center justify-content-center">
+    <div id="spinner"></div>
+</div>
+
+<input style="margin-bottom: 5%;" type="submit" (click)="Back()" value="Back"
+    class="btn btn-primary rounded-0 py-2 px-4 back-button">

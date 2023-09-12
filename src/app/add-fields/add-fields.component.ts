@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ViewportScroller, Location } from '@angular/common';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { NewResultSet } from './NewResultSet';
+import { Component, OnInit } from '@angular/core';
 import { tap, catchError, of } from 'rxjs';
-import { ToastService } from './toast.service';
-import { ViewportScroller } from '@angular/common';
+import { NewResultSet } from '../NewResultSet';
+import { ToastService } from '../toast.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-add-fields',
+  templateUrl: './add-fields.component.html',
+  styleUrls: ['./add-fields.component.scss']
 })
-export class AppComponent implements OnInit {
-  constructor(private http: HttpClient, public toast: ToastService, private viewportScroller: ViewportScroller) { }
+export class AddFieldsComponent implements OnInit {
+
+  constructor(private http: HttpClient, public toast: ToastService, private viewportScroller: ViewportScroller, private router: Router) { }
   customInput = "";
   isOther = false;
   isOtherExtra = false;
@@ -179,6 +180,11 @@ export class AppComponent implements OnInit {
     this.extraValidationList.splice(this.sourceList.indexOf($item), 1)
   }
 
+  Back() {
+
+    this.router.navigateByUrl(`/homepage`)
+
+  }
   PostForm() {
     this.scrollToTop()
 
@@ -220,4 +226,5 @@ export class AppComponent implements OnInit {
     });
 
   }
+
 }
