@@ -36,8 +36,8 @@ export class APIService {
         return this.http.get<NewResultSet<any>>(fullUrl).pipe(
             tap((result) => {
 
-                let mesg = "Successful Request !";
-                this.toast.success({ message: mesg });
+                // let mesg = "Successful Request !";
+                // this.toast.success({ message: mesg });
                 return result;
             }),
             catchError((errorResponse: HttpErrorResponse) => {

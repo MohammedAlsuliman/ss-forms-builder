@@ -18,6 +18,7 @@ import { AddNewNotificationsComponent } from './add-new-notifications/add-new-no
 import { AddNewPlaceholdersComponent } from './add-new-placeholders/add-new-placeholders.component';
 import { UpdatePlaceholdersComponent } from './update-placeholders/update-placeholders.component';
 import { HtmlRenderComponent } from './html-render/html-render.component';
+import { StepActionComponent } from './step-action/step-action.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HtmlRenderComponent } from './html-render/html-render.component';
     AddNewNotificationsComponent,
     AddNewPlaceholdersComponent,
     UpdatePlaceholdersComponent,
-    HtmlRenderComponent
+    HtmlRenderComponent,
+    StepActionComponent
   ],
   imports: [
     BrowserModule,

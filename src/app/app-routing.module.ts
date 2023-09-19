@@ -8,6 +8,7 @@ import { AddNewNotificationsComponent } from './add-new-notifications/add-new-no
 import { AddNewPlaceholdersComponent } from './add-new-placeholders/add-new-placeholders.component';
 import { UpdatePlaceholdersComponent } from './update-placeholders/update-placeholders.component';
 import { HtmlRenderComponent } from './html-render/html-render.component';
+import { StepActionComponent } from './step-action/step-action.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'notifications/update-placeholder',
     component: UpdatePlaceholdersComponent,
+  },
+  {
+    path: 'steps-actions',
+    component: StepActionComponent,
   },
   {
     path: 'html',

@@ -24,4 +24,8 @@ export class LadningPageComponent implements OnInit {
     this.router.navigateByUrl(`/notifications`)
   }
 
+  routeToStepActions() {
+    this.router.navigateByUrl(`/steps-actions`)
+  }
+
 }
