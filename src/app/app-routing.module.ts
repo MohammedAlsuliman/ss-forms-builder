@@ -9,6 +9,10 @@ import { AddNewPlaceholdersComponent } from './add-new-placeholders/add-new-plac
 import { UpdatePlaceholdersComponent } from './update-placeholders/update-placeholders.component';
 import { HtmlRenderComponent } from './html-render/html-render.component';
 import { StepActionComponent } from './step-action/step-action.component';
+import { CopyComponentPropComponent } from './copy-component-prop/copy-component-prop.component';
+import { CopyPastePageComponent } from './copy-paste-page/copy-paste-page.component';
+import { CopyFormFiledsComponent } from './copy-form-fileds/copy-form-fileds.component';
+import { CopyFiledsValuesComponent } from './copy-fileds-values/copy-fileds-values.component';
 
 const routes: Routes = [
   {
@@ -46,6 +50,22 @@ const routes: Routes = [
   {
     path: 'html',
     component: HtmlRenderComponent,
+  },
+  {
+    path: 'copy-paste',
+    component: CopyPastePageComponent,
+  },
+  {
+    path: 'copy-paste/component-property',
+    component: CopyComponentPropComponent,
+  },
+  {
+    path: 'copy-paste/form-fields',
+    component: CopyFormFiledsComponent,
+  },
+  {
+    path: 'copy-paste/fields-values',
+    component: CopyFiledsValuesComponent,
   },
   {
     path: '',

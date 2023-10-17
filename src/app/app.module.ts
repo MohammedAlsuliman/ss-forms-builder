@@ -19,6 +19,10 @@ import { AddNewPlaceholdersComponent } from './add-new-placeholders/add-new-plac
 import { UpdatePlaceholdersComponent } from './update-placeholders/update-placeholders.component';
 import { HtmlRenderComponent } from './html-render/html-render.component';
 import { StepActionComponent } from './step-action/step-action.component';
+import { CopyComponentPropComponent } from './copy-component-prop/copy-component-prop.component';
+import { CopyPastePageComponent } from './copy-paste-page/copy-paste-page.component';
+import { CopyFormFiledsComponent } from './copy-form-fileds/copy-form-fileds.component';
+import { CopyFiledsValuesComponent } from './copy-fileds-values/copy-fileds-values.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { StepActionComponent } from './step-action/step-action.component';
     AddNewPlaceholdersComponent,
     UpdatePlaceholdersComponent,
     HtmlRenderComponent,
-    StepActionComponent
+    StepActionComponent,
+    CopyComponentPropComponent,
+    CopyPastePageComponent,
+    CopyFormFiledsComponent,
+    CopyFiledsValuesComponent
   ],
   imports: [
     BrowserModule,

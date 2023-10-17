@@ -23,6 +23,9 @@ export class LadningPageComponent implements OnInit {
   routeToNotifications() {
     this.router.navigateByUrl(`/notifications`)
   }
+  routeToCopyPaste() {
+    this.router.navigateByUrl(`/copy-paste`)
+  }
 
   routeToStepActions() {
     this.router.navigateByUrl(`/steps-actions`)

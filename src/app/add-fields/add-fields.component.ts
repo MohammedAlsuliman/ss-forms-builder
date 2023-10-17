@@ -211,7 +211,7 @@ export class AddFieldsComponent implements OnInit {
   }
 
   getPropiertyName(ss: any) {
-    // http://localhost:8666/internal/all-property-by-field-name/text
+    
     this.http.get<NewResultSet<any>>("http://localhost:8666/internal/all-property-by-field-name/" + ss).pipe(
       tap((result) => {
 
